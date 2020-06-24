@@ -19,8 +19,8 @@ int main()
         std::cout << "open camera failed. " << std::endl;
         return -1;
     }
-    Net net = readNetFromCaffe("../MobileNetSSD_deploy.prototxt",
-        "../MobileNetSSD_deploy.caffemodel");
+    Net net = readNetFromCaffe(ROOT_DIR"/WeightFile/MobileNetSSD_deploy.prototxt",
+        ROOT_DIR"/WeightFile/MobileNetSSD_deploy.caffemodel");
     while (true)
     {
         cv::Mat frame;
@@ -51,10 +51,6 @@ int main()
                     cv::Rect object((int)xLeftBottom, (int)yLeftBottom,
                         (int)(xRightTop - xLeftBottom),
                         (int)(yRightTop - yLeftBottom));
-
-
-
-
                     std::ostringstream ss;
                     ss << classNames[objectClass] << " ";
 
