@@ -34,7 +34,7 @@ int main()
 
             cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
-            float confidenceThreshold = 0.8f;
+            float confidenceThreshold = 0.7f;
             for (int i = 0; i < detectionMat.rows; i++)
             {
                 float confidence = detectionMat.at<float>(i, 2);
